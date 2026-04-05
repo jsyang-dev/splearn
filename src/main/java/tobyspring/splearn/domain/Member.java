@@ -4,6 +4,9 @@ import static org.springframework.util.Assert.*;
 
 import java.util.Objects;
 
+import lombok.Getter;
+
+@Getter
 public class Member {
 	private String email;
 
@@ -18,22 +21,6 @@ public class Member {
 		this.nickname = Objects.requireNonNull(nickname);
 		this.passwordHash = Objects.requireNonNull(passwordHash);
 		this.status = MemberStatus.PENDING;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getNickname() {
-		return nickname;
-	}
-
-	public String getPasswordHash() {
-		return passwordHash;
-	}
-
-	public MemberStatus getStatus() {
-		return status;
 	}
 
 	public void activate() {
